@@ -20,7 +20,7 @@ app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 # CORS設定を追加
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # フロントエンドのURL
+    allow_origins=["http://localhost:3000","https://weather-clothes-app.vercel.app"],  # フロントエンドのURL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
