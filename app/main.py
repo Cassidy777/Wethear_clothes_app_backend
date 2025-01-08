@@ -15,6 +15,10 @@ Base.metadata.create_all(bind=engine)
 # FastAPI アプリケーションのインスタンスを作成
 app = FastAPI()
 
+@app.get("/")
+async def read_root():
+    return {"message": "Server is running"}
+
 # 静的ファイルの設定
 upload_dir = os.getenv("UPLOAD_DIR", "uploads")
 app.mount("/uploads", StaticFiles(directory=upload_dir), name="uploads")
